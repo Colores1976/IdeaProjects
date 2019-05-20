@@ -13,4 +13,7 @@ public class PoemBeautifier{
     public static String joinDecoration(String toDecorate, String decorator){
         return toDecorate.join(":)", toDecorate, decorator);
     }
+    public static String forthDecoration(String toDecorate, String decorator){
+        return decorator + toDecorate.replace("na", "NA") + decorator;
+    }
 }
