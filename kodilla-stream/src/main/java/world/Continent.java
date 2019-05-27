@@ -1,39 +1,24 @@
 package world;
 
-import java.util.ArrayList;
-import java.util.List;
+
+import java.util.Set;
 
 public class Continent {
+    private final String name;
+    private final Set<Country> countries;
 
-    static final List<Country> asia = new ArrayList<>();
-    public void setAsia(Country country){
-        asia.add(country);
-    }
-    public List<Country> getAsia(){
-        return new ArrayList<>(asia);
-    }
-
-    static final List<Country> africa = new ArrayList<>();
-    public void setAfrica(Country country){
-        africa.add(country);
-    }
-    public List<Country>getAfrica(){
-        return new ArrayList<>(africa);
+    public Continent(String name, Set<Country> countries) {
+        this.name = name;
+        this.countries = countries;
     }
 
-    static final List<Country> america = new ArrayList<>();
-    public void setAmerica(Country country){
-        america.add(country);
-    }
-    public List<Country>getAmerica(){
-        return new ArrayList<>(america);
+    public String getName() {
+        return name;
     }
 
-    static final List<Country> europa = new ArrayList<>();
-    public void setEuropa(Country country){
-        europa.add(country);
+
+    public Set<Country> getCountries() {
+        return countries;
     }
-    public List<Country> getEuropa(){
-        return new ArrayList<>(europa);
-    }
+
 }

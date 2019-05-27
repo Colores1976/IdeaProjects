@@ -4,19 +4,19 @@ import com.kodilla.stream.array.ArrayOperations;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static com.kodilla.stream.array.ArrayOperations.average;
-import static org.junit.Assert.assertEquals;
 
-public class ArrayOperationsTestSuite implements ArrayOperations {
+public class ArrayOperationsTestSuite{
 
     @Test
     public void arrayOperationsRestSuite() {
         //Given
 
         //When
-        int[] numbers = {5, 1};
+        int[] numbers = {5, 1, 2, 7, 4, 3, 2, 10, 100, 73};
+    double expectedValue = 21.00;
+    double result = ArrayOperations.getAverage(numbers);
         //Then
 
-      Assert.assertEquals(3.0, ArrayOperations.getAverage(numbers));
+        Assert.assertEquals(expectedValue, result, 2);
     }
 }

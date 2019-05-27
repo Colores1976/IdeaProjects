@@ -4,26 +4,18 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-public class World implements QuantityOfPeople {
+public class World {
+    private final List<Continent> continents;
 
+    public World(List<Continent> continents) {
+        this.continents = continents;
+    }
 
-    private static final List<Country> world = new ArrayList<>();
-
-   public List<Country> world(){
-       world.addAll(Continent.asia);
-       world.addAll(Continent.africa);
-       world.addAll(Continent.america);
-       world.addAll(Continent.europa);
-       return new ArrayList<>(world);
-   }
-
-    @Override
     public BigDecimal getPeopleQuantity() {
-        return BigDecimal.ZERO;
-        world.stream()
-                .flatMap(country -> country.getCountries())
+        BigDecimal result = continents.stream()
+                .flatMap(country -> country.getCountries().stream())
                 .map(Country::getPeopleQuantity)
-                .reduce(BigDecimal::add);
-
+                .reduce(BigDecimal.ZERO, (sum, current)-> sum = sum.add(current));
+        return result;
     }
 }
