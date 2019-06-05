@@ -1,7 +1,5 @@
 package com.kodilla.exeption.test;
 
-import java.io.IOException;
-
 
     public class FirstChallenge {
 
@@ -15,16 +13,16 @@ import java.io.IOException;
         public static void main(String[] args) {
 
             FirstChallenge firstChallenge = new FirstChallenge();
-            double result = 0.0;
+
             try {
-                result =  firstChallenge.divide(3, 0);
+                firstChallenge.divide(3, 0);
             } catch (ArithmeticException e) {
                 System.out.println("Czemu to się nie drukuje" + e);
             } finally {
                 System.out.println("Dziękujemy za skorzystanie z kalkulatora");
             }
 
-            System.out.println(result);
+           // System.out.println(result);
 
         }
     }
